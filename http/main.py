@@ -10,13 +10,11 @@ template = '''
 
     <head>
         <meta charset="UTF-8">
-        <title>HI TIBCO</title>
+        <title>INSTA TIBCO</title>
     </head>
 
     <body>
-        <h1>well? guess it's working!</h1>
-        <p></p>
-        <h2>@_@</h2>
+        <h1>Welcome to instagram (tibco eddition)...</h1>
     </body>
 
 </html>
@@ -25,13 +23,10 @@ template = '''
 
 @app.route("/")
 def index():
-    msg = 'go to /sqr/<number> to test it out'
-    return template.replace('@_@', msg)
-
-
-@app.route('/sqr/<int:num1>')
-def add_nums(num1):
-    return template.replace('@_@', str(sqrt(num1)))
+    # msg = 'wall is empty?'
+    # return template.replace('@_@', msg)
+    # <img src="" alt="feed">
+    return template
 
 
 app.run(host='0.0.0.0', port=80)
