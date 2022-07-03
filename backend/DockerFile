@@ -1,0 +1,24 @@
+# 3-7-2022
+# AbdElAziz Moftah
+# Build docker image for tibcogram
+
+# Selecting out base image
+FROM python:slim
+
+# Open local port to the world
+EXPOSE 80
+
+# Copy requirments to the host container
+COPY requirements.txt .
+
+# Install pip requirements
+RUN python -m pip install -r requirements.txt
+
+# Copy the app into the host container
+COPY ./source /app
+
+# changing directoy to the app
+WORKDIR /app
+
+# Run the App
+ENTRYPOINT ["python", "main.py"]
